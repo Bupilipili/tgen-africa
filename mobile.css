@@ -1,0 +1,47 @@
+/* TGen Africa — mobile preview page (design-review showcase only) */
+
+.mobile-page { padding: 48px 40px 64px; }
+.mobile-inner { max-width: 1400px; margin: 0 auto; }
+.mobile-head { padding-bottom: 28px; border-bottom: 2px solid var(--text); }
+.mobile-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua); }
+.mobile-title { margin: 14px 0 0; font-size: 44px; line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; color: var(--deep); }
+.mobile-note { margin: 14px 0 0; font-size: 16px; line-height: 1.6; max-width: 760px; }
+
+.screens { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 44px; }
+.screen { display: flex; flex-direction: column; gap: 18px; }
+.screen-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--text); padding-bottom: 10px; }
+.screen-num { font-size: 13px; font-weight: 700; color: var(--green); }
+.screen-label { font-size: 15px; font-weight: 700; color: var(--deep); }
+.screen-caption { font-size: 13px; line-height: 1.55; max-width: 402px; color: var(--muted); }
+
+/* iOS-style device bezel (simplified, per ios-frame.jsx) */
+.ios-device {
+  width: 402px; height: 874px; border-radius: 48px; overflow: hidden;
+  position: relative; background: #F2F2F7;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.12);
+}
+.ios-device iframe { width: 100%; height: 100%; border: 0; display: block; }
+.ios-island {
+  position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+  width: 126px; height: 37px; border-radius: 24px; background: #000; z-index: 50;
+}
+.ios-statusbar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: center; gap: 154px;
+  padding: 21px 24px 19px; pointer-events: none;
+}
+.ios-statusbar-time {
+  flex: 1; height: 22px; display: flex; align-items: center; justify-content: center;
+  font-family: -apple-system, "SF Pro", system-ui; font-weight: 590; font-size: 17px; color: #000;
+}
+.ios-statusbar-icons { flex: 1; height: 22px; display: flex; align-items: center; justify-content: center; gap: 7px; }
+.ios-home-indicator {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 60;
+  height: 34px; display: flex; justify-content: center; align-items: flex-end;
+  padding-bottom: 8px; pointer-events: none;
+}
+.ios-home-indicator span { width: 139px; height: 5px; border-radius: 100px; background: rgba(0,0,0,0.25); }
+
+@media (max-width: 900px) {
+  .mobile-page { padding: 32px 20px 48px; }
+}
