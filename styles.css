@@ -45,8 +45,22 @@ p { text-wrap: pretty; }
 .btn-cta:hover { background: var(--deep); color: #fff; }
 
 /* ── Hero ───────────────────────────────────────────────── */
-.hero { border-bottom: 2px solid var(--text); }
-.hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; }
+.hero { position: relative; overflow: hidden; border-bottom: 2px solid var(--text); }
+
+/* Faint Africa map drifting behind the hero content */
+.hero-map { position: absolute; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: flex-end; pointer-events: none; overflow: hidden; }
+.hero-map-inner { height: 116%; margin-right: -3%; opacity: 0.42; will-change: transform; animation: heroMapFloat 13s ease-in-out infinite alternate; }
+.hero-map svg { height: 100%; width: auto; display: block; }
+.africa-geo path { fill: color-mix(in srgb, var(--deep) 8%, transparent); stroke: color-mix(in srgb, var(--deep) 42%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+@keyframes heroMapFloat {
+  from { transform: translateY(-16px) rotate(-1.1deg); }
+  to   { transform: translateY(16px) rotate(1.1deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-map-inner { animation: none; transform: none; }
+}
+
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr 1fr; }
 .hero-left { padding: 88px 48px 72px 0; border-right: 2px solid var(--text); }
 .hero-kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 40px; }
 .hero-h1 { font-size: 84px; line-height: 0.95; font-weight: 800; letter-spacing: -0.03em; color: var(--deep); }
@@ -136,7 +150,9 @@ p { text-wrap: pretty; }
 .targets-head { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: end; padding-bottom: 40px; }
 .targets-heading { font-size: 46px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; color: var(--deep); }
 .targets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-.target-cell { border-top: 2px solid var(--text); padding: 28px 24px 32px 0; }
+.target-cell { border-top: 2px solid var(--text); padding: 32px 26px 34px 30px; }
+/* first cell of each 4-col row stays flush-left; the rest breathe off the gap */
+.target-cell:nth-child(4n+1) { padding-left: 0; }
 .target-num { font-size: 40px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: var(--green); }
 .target-label { font-size: 14px; font-weight: 500; line-height: 1.45; margin-top: 12px; }
 
@@ -179,14 +195,17 @@ p { text-wrap: pretty; }
   [data-m~="cascade"] { flex-direction: column !important; align-items: stretch !important; gap: 14px !important; }
   [data-m~="hdrnav"] { display: none !important; }
   [data-m~="hdr"] { padding: 12px 20px !important; gap: 14px !important; }
+  .hero-map { display: none !important; }
   [data-m~="heroL"] { border-right: 0 !important; padding: 44px 0 28px !important; }
   [data-m~="heroR"] { padding-left: 0 !important; margin-left: 0 !important; }
   [data-m~="h1"] { font-size: 38px !important; }
   [data-m~="h2"] { font-size: 28px !important; }
   [data-m~="h2big"] { font-size: 34px !important; }
   [data-m~="statcell"] { padding: 24px 16px 26px 0 !important; }
-  /* in the 2×2 grid, the right-column cells need room off the divider */
+  /* in the 2-col grids, the right-column cells need room off the divider/gap */
   .stat-cell:nth-child(even) { padding-left: 18px !important; }
+  .target-cell { padding-left: 18px !important; }
+  .target-cell:nth-child(odd) { padding-left: 0 !important; }
   [data-m~="card"] { padding: 26px 22px 30px !important; }
   [data-m~="btnrow"] { flex-direction: column !important; align-items: stretch !important; }
 }
