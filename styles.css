@@ -48,17 +48,20 @@ p { text-wrap: pretty; }
 .hero { position: relative; overflow: hidden; border-bottom: 2px solid var(--text); }
 
 /* Faint Africa map drifting behind the hero content — large, centred behind
-   the headline with its right edge meeting the divider */
+   the headline with its right edge meeting the divider. Centring lives on
+   .hero-map-inner; the float animation lives on .hero-map-float, so the two
+   transforms compose and never fight across breakpoints. */
 .hero-map { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.hero-map-inner { position: absolute; top: 50%; left: 39%; height: 124%; opacity: 0.42; will-change: transform; animation: heroMapFloat 13s ease-in-out infinite alternate; }
+.hero-map-inner { position: absolute; top: 50%; left: 39%; height: 124%; transform: translate(-50%, -50%); }
+.hero-map-float { height: 100%; opacity: 0.42; will-change: transform; animation: heroMapFloat 13s ease-in-out infinite alternate; }
 .hero-map svg { height: 100%; width: auto; display: block; }
 .africa-geo path { fill: color-mix(in srgb, var(--deep) 8%, transparent); stroke: color-mix(in srgb, var(--deep) 42%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 @keyframes heroMapFloat {
-  from { transform: translate(-50%, calc(-50% - 15px)) rotate(-1.1deg); }
-  to   { transform: translate(-50%, calc(-50% + 15px)) rotate(1.1deg); }
+  from { transform: translateY(-15px) rotate(-1.1deg); }
+  to   { transform: translateY(15px) rotate(1.1deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-map-inner { animation: none; transform: translate(-50%, -50%); }
+  .hero-map-float { animation: none; transform: none; }
 }
 
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr 1fr; }
@@ -196,7 +199,11 @@ p { text-wrap: pretty; }
   [data-m~="cascade"] { flex-direction: column !important; align-items: stretch !important; gap: 14px !important; }
   [data-m~="hdrnav"] { display: none !important; }
   [data-m~="hdr"] { padding: 12px 20px !important; gap: 14px !important; }
-  .hero-map { display: none !important; }
+  /* Keep the map on mobile: anchor it near the top and size it by width so it
+     scales with the phone, centred behind the stacked hero. */
+  .hero-map-inner { top: 24px; left: 50%; height: auto; width: 150%; transform: translateX(-50%); }
+  .hero-map-float { height: auto; opacity: 0.3; }
+  .hero-map svg { width: 100%; height: auto; }
   [data-m~="heroL"] { border-right: 0 !important; padding: 44px 0 28px !important; }
   [data-m~="heroR"] { padding-left: 0 !important; margin-left: 0 !important; }
   [data-m~="h1"] { font-size: 38px !important; }
