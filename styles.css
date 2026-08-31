@@ -76,7 +76,9 @@ p { text-wrap: pretty; }
 .gap-copy p { font-size: 16px; line-height: 1.65; }
 
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--text); margin-top: 56px; }
-.stat-cell { padding: 32px 28px 36px 0; border-right: 2px solid var(--text); }
+.stat-cell { padding: 36px 30px 40px 0; border-right: 2px solid var(--text); }
+/* keep the first number flush-left with the section; give the rest room off the divider */
+.stat-cell + .stat-cell { padding-left: 30px; }
 .stat-num { font-size: 42px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; color: var(--deep); }
 .stat-label { font-size: 14px; font-weight: 600; line-height: 1.4; margin-top: 12px; }
 .stat-src { font-size: 12px; font-weight: 500; line-height: 1.5; margin-top: 8px; color: var(--muted-2); }
@@ -182,7 +184,9 @@ p { text-wrap: pretty; }
   [data-m~="h1"] { font-size: 38px !important; }
   [data-m~="h2"] { font-size: 28px !important; }
   [data-m~="h2big"] { font-size: 34px !important; }
-  [data-m~="statcell"] { padding: 20px 16px 22px 0 !important; }
+  [data-m~="statcell"] { padding: 24px 16px 26px 0 !important; }
+  /* in the 2×2 grid, the right-column cells need room off the divider */
+  .stat-cell:nth-child(even) { padding-left: 18px !important; }
   [data-m~="card"] { padding: 26px 22px 30px !important; }
   [data-m~="btnrow"] { flex-direction: column !important; align-items: stretch !important; }
 }
