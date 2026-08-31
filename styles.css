@@ -206,6 +206,8 @@ p { text-wrap: pretty; }
   .hero-map svg { width: 100%; height: auto; }
   [data-m~="heroL"] { border-right: 0 !important; padding: 44px 0 28px !important; }
   [data-m~="heroR"] { padding-left: 0 !important; margin-left: 0 !important; }
+  /* the 60% block is a filled panel — keep its own inner padding */
+  .hero-stat { padding: 24px 22px !important; }
   [data-m~="h1"] { font-size: 38px !important; }
   [data-m~="h2"] { font-size: 28px !important; }
   [data-m~="h2big"] { font-size: 34px !important; }
