@@ -47,17 +47,18 @@ p { text-wrap: pretty; }
 /* ── Hero ───────────────────────────────────────────────── */
 .hero { position: relative; overflow: hidden; border-bottom: 2px solid var(--text); }
 
-/* Faint Africa map drifting behind the hero content */
-.hero-map { position: absolute; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: flex-end; pointer-events: none; overflow: hidden; }
-.hero-map-inner { height: 116%; margin-right: -3%; opacity: 0.42; will-change: transform; animation: heroMapFloat 13s ease-in-out infinite alternate; }
+/* Faint Africa map drifting behind the hero content — large, centred behind
+   the headline with its right edge meeting the divider */
+.hero-map { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero-map-inner { position: absolute; top: 50%; left: 39%; height: 124%; opacity: 0.42; will-change: transform; animation: heroMapFloat 13s ease-in-out infinite alternate; }
 .hero-map svg { height: 100%; width: auto; display: block; }
 .africa-geo path { fill: color-mix(in srgb, var(--deep) 8%, transparent); stroke: color-mix(in srgb, var(--deep) 42%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 @keyframes heroMapFloat {
-  from { transform: translateY(-16px) rotate(-1.1deg); }
-  to   { transform: translateY(16px) rotate(1.1deg); }
+  from { transform: translate(-50%, calc(-50% - 15px)) rotate(-1.1deg); }
+  to   { transform: translate(-50%, calc(-50% + 15px)) rotate(1.1deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-map-inner { animation: none; transform: none; }
+  .hero-map-inner { animation: none; transform: translate(-50%, -50%); }
 }
 
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr 1fr; }
