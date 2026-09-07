@@ -5,17 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TGen Africa — Transformative Generation</title>
 <meta name="description" content="TGen Africa equips African youth to sit where decisions are made — in peacebuilding, governance, and community development.">
+<link rel="canonical" href="https://bupilipili.github.io/tgen-africa/">
+<meta name="theme-color" content="#0B3C5D">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/brand/icon-colour.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TGen Africa">
+<meta property="og:title" content="TGen Africa — Transformative Generation">
+<meta property="og:description" content="Young people are not the leaders of tomorrow. TGen Africa equips African youth to sit where decisions are made — in peacebuilding, governance, and community development.">
+<meta property="og:url" content="https://bupilipili.github.io/tgen-africa/">
+<meta property="og:image" content="https://bupilipili.github.io/tgen-africa/assets/brand/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TGen Africa — Transformative Generation">
+<meta name="twitter:description" content="Young people are not the leaders of tomorrow. TGen Africa equips African youth to sit where decisions are made.">
+<meta name="twitter:image" content="https://bupilipili.github.io/tgen-africa/assets/brand/og-card.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a href="#top" class="skip-link">Skip to content</a>
 <div class="page">
 
   <header class="site-header">
     <div class="header-inner" data-m="pad hdr">
-      <a href="#top" class="logo-link"><img src="assets/tgen-logo.jpg" alt="TGen Africa" class="header-logo"></a>
+      <a href="#top" class="logo-link"><img src="assets/brand/logo-horizontal-colour.svg" alt="TGen Africa — Transformative Generation" class="header-logo" width="240" height="100"></a>
       <nav class="nav-links" data-m="hdrnav">
         <a href="#problem">The gap</a>
         <a href="#programmes">Programmes</a>
@@ -412,8 +436,9 @@
           <h3 class="involved-title">Get the briefing</h3>
           <p class="involved-body">A short monthly note: cohort progress, policy briefs, and where youth voice moved a decision.</p>
           <form id="subscribe-form" class="subscribe-form">
-            <input type="email" name="email" required placeholder="you@organisation.org" class="subscribe-input">
-            <button type="submit" class="btn-accent" id="subscribe-btn">Subscribe</button>
+            <label for="subscribe-email" class="visually-hidden">Your email address</label>
+            <input type="email" id="subscribe-email" name="email" required autocomplete="email" placeholder="you@organisation.org" class="subscribe-input">
+            <button type="submit" class="btn-accent" id="subscribe-btn" aria-live="polite">Subscribe</button>
           </form>
         </div>
       </div>
@@ -423,7 +448,7 @@
   <footer class="site-footer">
     <div class="container footer-inner" data-m="pad stack">
       <div>
-        <img src="assets/tgen-logo.jpg" alt="TGen Africa" class="footer-logo">
+        <img src="assets/brand/logo-horizontal-white.svg" alt="TGen Africa — Transformative Generation" class="footer-logo" width="240" height="100">
         <p class="footer-about">Transformative Generation (TGen Africa) is a pan-African non-profit committed to shaping young people into effective ambassadors for peace and security, and community development.</p>
         <div class="footer-tags">Peace &amp; security · Leadership · Community development</div>
       </div>

@@ -32,5 +32,6 @@ Your site will be live at `https://<owner>.github.io/<repo>/` within a minute.
 - `styles.css` — main stylesheet
 - `script.js` — subscribe-form + smooth-scroll behavior
 - `mobile.html` / `mobile.css` — iPhone-frame design-review showcase
-- `assets/tgen-logo.jpg` — logo
+- `assets/brand/` — vector logos, favicons and the social share card (from the official brand pack)
+- `favicon.ico`, `site.webmanifest` — browser tab icon and install metadata
 - `.nojekyll` — tells Pages to skip Jekyll processing
