@@ -35,7 +35,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   const groups = ".stats-grid, .pressures-list, .programmes-grid, .approach-grid, .targets-grid, .involved-grid";
   document.querySelectorAll(groups).forEach((group) => {
     group.querySelectorAll(":scope > .reveal").forEach((el, i) => {
-      el.style.transitionDelay = Math.min(i * 70, 350) + "ms";
+      el.style.transitionDelay = Math.min(i * 100, 500) + "ms";
     });
   });
 
