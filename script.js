@@ -32,7 +32,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   }
 
   // Stagger siblings within a grid so a row arrives as a sequence, not a slab.
-  const groups = ".stats-grid, .pressures-list, .programmes-grid, .approach-grid, .targets-grid, .involved-grid";
+  const groups = ".about-top, .vm, .obj-grid, .prog-list, .inv-grid";
   document.querySelectorAll(groups).forEach((group) => {
     group.querySelectorAll(":scope > .reveal").forEach((el, i) => {
       el.style.transitionDelay = Math.min(i * 100, 500) + "ms";
