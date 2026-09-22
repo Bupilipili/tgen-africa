@@ -64,7 +64,7 @@ p { text-wrap: pretty; }
 .band-quote { position: relative; overflow: hidden; background: var(--surface); border-top: 2px solid var(--deep); border-bottom: 2px solid var(--deep); }
 .qmap { position: absolute; inset: 0; z-index: 0; display: flex; justify-content: center; align-items: center; pointer-events: none; }
 .qmap-float { display: contents; }
-.qmap svg { height: 130%; width: auto; opacity: 0.5; transform-origin: center; animation: qFloat 16s ease-in-out infinite alternate; }
+.qmap svg { height: 130%; width: auto; opacity: 0.5; transform-origin: center; animation: qFloat 9s ease-in-out infinite alternate; }
 .africa-geo path { fill: color-mix(in srgb, var(--deep) 8%, transparent); stroke: color-mix(in srgb, var(--deep) 40%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
 .qmap-in { position: relative; z-index: 1; padding: 88px 0 96px; }
 .band-quote.is-centered .qmap-in { text-align: center; }
