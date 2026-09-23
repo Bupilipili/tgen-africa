@@ -9,4 +9,5 @@ deployment:
     - /bin/cp -f mobile.css $DEPLOYPATH
     - /bin/cp -f site.webmanifest $DEPLOYPATH
     - /bin/cp -f favicon.ico $DEPLOYPATH
+    - /bin/cp -f .htaccess $DEPLOYPATH
     - /bin/cp -Rf assets $DEPLOYPATH
