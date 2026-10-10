@@ -104,7 +104,7 @@ p { text-wrap: pretty; }
 .prog { padding: 96px 0; border-top: 2px solid var(--deep); }
 .prog-grid { display: grid; grid-template-columns: minmax(0,260px) minmax(0,1fr); gap: 56px; align-items: start; margin-top: 8px; }
 .prog-eyebrow { padding-top: 10px; }
-.prog h2 { font-size: 44px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; color: var(--deep); }
+.prog .prog-title { font-size: 44px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em; color: var(--deep); }
 .prog-lead { margin-top: 24px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 720px; }
 .prog-list { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border-top: 2px solid var(--deep); }
 .prog-item { padding: 26px 24px 26px 0; border-bottom: 1px solid rgba(11,60,93,0.15); }
